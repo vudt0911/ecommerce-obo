@@ -12,10 +12,10 @@ mvn spring-boot:run
 Import file ```obo.sql``` vào MySQL. Sử dụng 2 account sau để đăng nhập vào web:
 
 - Admin account:
-    - Username: admin@obostadium.com
+    - Username: admin@admin.com
     - Password: 123456
 - Member account:
-    - Username: monguyen@gmail.com
+    - Username: thevu091193@gmail.com
     - Password: 123456
     
 

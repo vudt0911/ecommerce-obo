@@ -150,10 +150,10 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `created_at`, `modified_at`, `note`, `product_price`, `promotion`, `receiver_address`, `receiver_name`, `receiver_phone`, `size`, `status`, `total_price`, `buyer`, `created_by`, `modified_by`, `product_id`) VALUES
-(2, '2020-06-09 10:16:21', NULL, NULL, 400000, NULL, 'Số 14 Ngõ 4 Nguyễn Đình Chiểu Hai Bà Trưng Hà Nội', 'Nguyễn Thị Mộng Mơ', '0916468464', 39, 5, 400000, 2, 2, NULL, 'JLEjl2'),
-(3, '2020-06-09 11:07:26', '2020-06-09 11:12:33', 'Đã thanh toán chuyển khoản. Mã giao dịch 64864345', 2000000, '{\"couponCode\": \"OPENING\", \"discountType\": 1, \"discountValue\": 20, \"maximumDiscountValue\": 200000}', 'Số 14 ngõ 4 Nguyễn Đình Chiểu Hai Bà Trưng Hà Nội', 'Nguyễn Thị Mộng Mơ', '0916468464', 38, 3, 1800000, 2, 2, 1, 'HWT354'),
-(4, '2020-06-09 11:08:35', '2020-06-09 11:13:42', '', 1000000, '{\"couponCode\": \"OPENING\", \"discountType\": 1, \"discountValue\": 20, \"maximumDiscountValue\": 200000}', 'Số 14 ngõ 4 Nguyễn Đình Chiểu Hai Bà Trưng Hà Nội', 'Nguyễn Thị Mộng Mơ', '0916468464', 38, 2, 800000, 2, 2, 1, '3AQ322'),
-(5, '2020-06-09 11:08:59', NULL, NULL, 460000, '{\"couponCode\": \"OPENING\", \"discountType\": 1, \"discountValue\": 20, \"maximumDiscountValue\": 200000}', 'Số 14 ngõ 4 Nguyễn Đình Chiểu Hai Bà Trưng Hà Nội', 'Nguyễn Thị Mộng Mơ', '0916468464', 36, 1, 368000, 2, 2, NULL, '1df5Kd');
+(2, '2020-06-09 10:16:21', NULL, NULL, 400000, NULL, 'Hà Nội', 'Nguyễn Thị Mộng Mơ', '0916468464', 39, 5, 400000, 2, 2, NULL, 'JLEjl2'),
+(3, '2020-06-09 11:07:26', '2020-06-09 11:12:33', 'Đã thanh toán chuyển khoản. Mã giao dịch 64864345', 2000000, '{\"couponCode\": \"OPENING\", \"discountType\": 1, \"discountValue\": 20, \"maximumDiscountValue\": 200000}', 'Hà Nội', 'Nguyễn Thị Mộng Mơ', '0916468464', 38, 3, 1800000, 2, 2, 1, 'HWT354'),
+(4, '2020-06-09 11:08:35', '2020-06-09 11:13:42', '', 1000000, '{\"couponCode\": \"OPENING\", \"discountType\": 1, \"discountValue\": 20, \"maximumDiscountValue\": 200000}', 'Hà Nội', 'Nguyễn Thị Mộng Mơ', '0916468464', 38, 2, 800000, 2, 2, 1, '3AQ322'),
+(5, '2020-06-09 11:08:59', NULL, NULL, 460000, '{\"couponCode\": \"OPENING\", \"discountType\": 1, \"discountValue\": 20, \"maximumDiscountValue\": 200000}', 'Hà Nội', 'Nguyễn Thị Mộng Mơ', '0916468464', 36, 1, 368000, 2, 2, NULL, '1df5Kd');
 
 -- --------------------------------------------------------
 
@@ -409,8 +409,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `address`, `created_at`, `email`, `full_name`, `password`, `phone`, `roles`, `status`) VALUES
-(1, NULL, '2020-06-09 03:44:12', 'admin@obostadium.com', 'ADMIN', '$2a$12$gDLZPcBVL5RESvJijhJxCOLw4XQeA7j4QvY8txQMpvdujZsnqdVC6', '0987654321', '[\"USER\", \"ADMIN\"]', 1),
-(2, 'Số 14 ngõ 4 Nguyễn Đình Chiểu Hai Bà Trưng Hà Nội', '2020-06-09 09:59:27', 'monguyen@gmail.com', 'Nguyễn Thị Mộng Mơ', '$2a$12$pcEjVpxZ1PDsH3yEgmTduu6h49gomcuffJWEz0HQTzaQu7.flCwKW', '0916468464', '[\"USER\"]', 1);
+(1, NULL, '2020-06-09 03:44:12', 'admin@admin.com', 'ADMIN', '$2a$12$gDLZPcBVL5RESvJijhJxCOLw4XQeA7j4QvY8txQMpvdujZsnqdVC6', '0987654321', '[\"USER\", \"ADMIN\"]', 1),
+(2, 'Dương Quảng Hàm, Quan Hoa, Cầu Giấy, Hà Nội', '2020-06-09 09:59:27', 'thevu091193@gmail.com', 'Đinh Thế Vũ', '$2a$12$pcEjVpxZ1PDsH3yEgmTduu6h49gomcuffJWEz0HQTzaQu7.flCwKW', '0987654312', '[\"USER\"]', 1);
 
 --
 -- Chỉ mục cho các bảng đã đổ

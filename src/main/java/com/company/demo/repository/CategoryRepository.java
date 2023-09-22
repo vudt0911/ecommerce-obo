@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
     @Query(nativeQuery = true, name = "getListCategoryAndProductCount")
-    public List<CategoryInfo> getListCategoryAndProductCount();
+    List<CategoryInfo> getListCategoryAndProductCount();
 
     @Query(nativeQuery = true, value = "Select 1 from product_category where category_id = ?1")
-    public int checkProductInCategory(int id);
+    int checkProductInCategory(int id);
 }

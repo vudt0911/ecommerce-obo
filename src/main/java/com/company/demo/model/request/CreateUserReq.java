@@ -41,7 +41,7 @@ public class CreateUserReq {
     )
     private String password;
 
-    @Pattern(regexp="(09|01[2|6|8|9])+([0-9]{8})\\b", message = "Điện thoại không hợp lệ")
+    @Pattern(regexp="(0[9|1|2|6|8])+([0-9]{8})\\b", message = "Điện thoại không hợp lệ")
     @ApiModelProperty(
             example="0916016972",
             notes="Điện thoại trống",

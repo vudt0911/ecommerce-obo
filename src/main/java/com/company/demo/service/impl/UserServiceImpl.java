@@ -1,8 +1,13 @@
 package com.company.demo.service.impl;
 
+import com.company.demo.entity.Category;
+import com.company.demo.entity.Order;
 import com.company.demo.entity.User;
 import com.company.demo.exception.BadRequestException;
 import com.company.demo.exception.DuplicateRecordException;
+import com.company.demo.exception.InternalServerException;
+import com.company.demo.exception.NotFoundException;
+import com.company.demo.model.dto.UserDto;
 import com.company.demo.model.mapper.UserMapper;
 import com.company.demo.model.request.ChangePasswordReq;
 import com.company.demo.model.request.CreateUserReq;
@@ -13,10 +18,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 @Component
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
+
+    @Override
+    public List<UserDto> getListUser() {
+        List<User> users = this.userRepository.findAllNotAdmin();
+        return users.stream().map(UserMapper::toUserDto).collect(Collectors.toList());
+    }
 
     @Override
     public User createUser(CreateUserReq req) {
@@ -51,5 +66,28 @@ public class UserServiceImpl implements UserService {
         user.setFullName(req.getFullName());
 
         return userRepository.save(user);
+    }
+
+    @Override
+    public void deleteUser(Long id) {
+        // Check user exist
+        Optional<User> rs = userRepository.findById(id);
+        if (rs.isEmpty()) {
+            throw new NotFoundException("User không tồn tại");
+        }
+
+        // Check product in user
+        List<Object> orders = userRepository.checkProductInOrder(id);
+        if (orders != null && orders.size() > 0) {
+            throw new BadRequestException("Có đơn hàng thuộc user không thể xóa");
+        }
+
+        User user = rs.get();
+
+        try {
+            userRepository.delete(user);
+        } catch (Exception ex) {
+            throw new InternalServerException("Lỗi khi xóa user");
+        }
     }
 }

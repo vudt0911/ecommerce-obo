@@ -8,13 +8,13 @@ import java.util.List;
 
 @Service
 public interface CategoryService {
-    public List<Category> getListCategory();
+    List<Category> getListCategory();
 
-    public List<CategoryInfo> getListCategoryAndProductCount();
+    List<CategoryInfo> getListCategoryAndProductCount();
 
-    public Category createCategory(CreateCategoryReq req);
+    Category createCategory(CreateCategoryReq req);
 
-    public void updateCategory(int id, CreateCategoryReq req);
+    void updateCategory(int id, CreateCategoryReq req);
 
-    public void deleteCategory(int id);
+    void deleteCategory(int id);
 }

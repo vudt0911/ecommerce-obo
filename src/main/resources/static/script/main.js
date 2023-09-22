@@ -75,7 +75,7 @@ $(document).on('click', function (e) {
   if (target.closest('.sign-up-btn')) {
     let isValid = true;
     $('.invalid-feedback').css('display', 'none');
-    let phoneFormat = new RegExp(/((09|03|07|08|05)+([0-9]{8})\b)/g);
+    let phoneFormat = new RegExp(/((09|01|02|08|06)+([0-9]{8})\b)/g);
     let emailFormat = new RegExp(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/);
 
     let fullName = $('.sign-up-full-name');
